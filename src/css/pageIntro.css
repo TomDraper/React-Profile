@@ -1,0 +1,25 @@
+.pageIntro {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 4rem;
+    overflow: hidden;
+}
+
+.pageIntroSideImage {
+    float: right;
+    margin-left: 1rem;
+    display: flex;
+    justify-self: flex-end;
+    width: min(400px, 100%);
+    aspect-ratio: auto 16/9;
+    border-radius: var(--button-radius);
+}
+
+.pageIntro > h1 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.pageIntro > div > h1 {
+    margin: 0;
+}

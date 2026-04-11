@@ -1,0 +1,65 @@
+
+.navBar {
+    position: sticky;
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    border-bottom: 1px var(--border-grey) solid;
+}
+
+.navBar > ul {
+    height: 100%;
+    margin: 0px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    align-content: center;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    color: var(--grey-text);
+}
+
+.navBar > ul > li > a, 
+.navBar > ul > li > a:visited, 
+.navBar > ul > li > a:active
+{
+    display: flex;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    align-items:center;
+    cursor: pointer;
+    font-weight: var(--font-weight-light);
+    text-decoration: none;
+}
+
+.navBar > ul > li > a:not(.greenText), 
+.navBar > ul > li > a:visited:not(.greenText), 
+.navBar > ul > li > a:active:not(.greenText){
+    color: var(--grey-text);
+}
+
+.navBar > ul > li > a:hover,  .navBar > ul > li > a:active:hover{
+    color: var(--green-text);
+}
+
+.navBar > ul > li > a:visited {
+    color: var(--grey-text);
+}
+
+.navBar > ul > li > a:hover:not(.greenText) {
+    color: var(--white-text);
+}
+
+.navBar > ul > li:first-child {
+    margin-right: auto;
+}
+
+.navBar > ul > li:first-child > a {
+    font-weight: var(--font-weight-bold);
+}
+
+.navBar > ul > li {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
