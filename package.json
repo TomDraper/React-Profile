@@ -1,7 +1,7 @@
 {
-  "name": "profile-main",
+  "name": "reactprofile",
   "version": "0.1.0",
-  "homepage": "https://tomdraper.github.io/Profile",
+  "homepage": "https://tomdraper.github.io/React-Profile",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
@@ -15,6 +15,7 @@
     "git": "^0.1.5",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
