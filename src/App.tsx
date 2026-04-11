@@ -14,8 +14,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element = {homePage} />
-        <Route path="/about" element={aboutPage} />
+        <Route path="/React-Profile/" element = {homePage} />
+        <Route path="/React-Profile/about" element={aboutPage} />
       </Routes>
     </BrowserRouter>
   );

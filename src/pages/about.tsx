@@ -36,7 +36,7 @@ const bulletCards : SmallCardBulletProp[] = [
     },
 ]
 
-const navBar = NavBar(1);
+const navBar = NavBar(2);
 const intro = PageIntro();
 
 export default function AboutPage(){

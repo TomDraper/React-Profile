@@ -7,10 +7,10 @@ type NavBarLinkProp = {
 }
 
 const navBarLinks : NavBarLinkProp[] = [
-    { current: false, text: "Home", url: "/" },
-    { current: false, text: "Projects", url: "/projects.html" },
-    { current: false, text: "About", url: "/about" },
-    { current: false, text: "Contact", url: "/contact.html" }
+    { current: false, text: "Home", url: "/React-Profile/" },
+    { current: false, text: "Projects", url: "/React-Profile/projects" },
+    { current: false, text: "About", url: "/React-Profile/about" },
+    { current: false, text: "Contact", url: "/React-Profile/contact" }
 ]
 
 export default function NavBar(selected:number){
