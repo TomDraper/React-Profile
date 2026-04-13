@@ -104,17 +104,14 @@ const experienceBlocks : ExperienceProp[] = [
     }
 ]
 
-const navBar = NavBar(2);
-const footer = Footer(true, true);
-
 export default function AboutPage(){
     return (
         <div>
-            { navBar }
+            <NavBar selected={2} />
             <PageIntro props={pageIntroProps} />
             <SmallCardBulletedBoxSection title="Skills and Experience" cardProps={bulletCards} />
             <ExperienceSection title="Experience" props={experienceBlocks} />
-            { footer }
+            <Footer includeProjectButton={true} includeContactButton={true} />
         </div>
     );
 }

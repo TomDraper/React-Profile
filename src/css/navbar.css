@@ -43,10 +43,6 @@
     color: var(--green-text);
 }
 
-.navBar > ul > li > a:visited {
-    color: var(--grey-text);
-}
-
 .navBar > ul > li > a:hover:not(.greenText) {
     color: var(--white-text);
 }

@@ -1,4 +1,4 @@
-export default function Footer(includeProjectButton : boolean, includeContactButton : boolean){
+export default function Footer({includeProjectButton, includeContactButton} : {includeProjectButton : boolean, includeContactButton : boolean}){
     return (
         <div>
             <FooterComponent includeProjectButton={includeProjectButton} includeContactButton={includeContactButton} />
@@ -15,12 +15,12 @@ function FooterComponent ({ includeProjectButton, includeContactButton } : { inc
             <div className="horizontalContainer center">
                 { 
                 includeProjectButton ? 
-                <a href="projects.html"><button className="btn greenButton">View Projects</button></a> :
+                <a href="#/projects"><button className="btn greenButton">View Projects</button></a> :
                 "" 
                 }
                 { 
                 includeContactButton ? 
-                <a href="contact.html"><button className="btn transparentButton">Get in Touch</button></a> :
+                <a href="#/contact"><button className="btn transparentButton">Get in Touch</button></a> :
                 "" 
                 }
                 

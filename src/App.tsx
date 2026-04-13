@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import './css/vars.css';
-
 
 import HomePage from "./pages/home.tsx";
 import AboutPage from "./pages/about.tsx";
@@ -16,14 +15,14 @@ const contactPage = ContactPage();
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="/React-Profile/" element = {homePage} />
-        <Route path="/React-Profile/projects" element={projectsPage} />
-        <Route path="/React-Profile/about" element={aboutPage} />
-        <Route path="/React-Profile/contact" element={contactPage} />
+        <Route path="/" element = {homePage} />
+        <Route path="/projects" element={projectsPage} />
+        <Route path="/about" element={aboutPage} />
+        <Route path="/contact" element={contactPage} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

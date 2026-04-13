@@ -38,16 +38,13 @@ const socialProps : SocialProp[] = [
     }
 ]
 
-const navBar = NavBar(2);
-const footer = Footer(true, true);
-
 export default function ContactPage(){
     return (
         <div>
-            { navBar }
+            <NavBar selected={3} />
             <PageIntro />
             <ContactGrid emailProp={emailProp} socialProps={socialProps} />
-            { footer }
+            <Footer includeProjectButton={true} includeContactButton={false} />
         </div>
     );
 }

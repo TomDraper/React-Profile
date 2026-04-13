@@ -33,17 +33,13 @@ const smallCards : Cards.SmallCardProp[] = [
     },
 ]
 
-const navBar = NavBar(0);
-const splashPage = SplashPage();
-const footer = Footer(true, true);
-
 export default function HomePage(){
     return (
         <div>
-            { navBar}
-            { splashPage }
+            <NavBar selected={0} />
+            <SplashPage />
             <Cards.SmallCardFlexBox cardProps={smallCards} />
-            { footer }
+            <Footer includeProjectButton={true} includeContactButton={true} />
         </div>
     );
 }

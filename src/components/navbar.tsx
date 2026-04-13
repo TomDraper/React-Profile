@@ -6,14 +6,14 @@ type NavBarLinkProp = {
     url: string
 }
 
-const navBarLinks : NavBarLinkProp[] = [
-    { current: false, text: "Home", url: "/React-Profile/" },
-    { current: false, text: "Projects", url: "/React-Profile/projects" },
-    { current: false, text: "About", url: "/React-Profile/about" },
-    { current: false, text: "Contact", url: "/React-Profile/contact" }
+var navBarLinks : NavBarLinkProp[] = [
+    { current: false, text: "Home", url: "/" },
+    { current: false, text: "Projects", url: "/projects" },
+    { current: false, text: "About", url: "/about" },
+    { current: false, text: "Contact", url: "/contact" }
 ]
 
-export default function NavBar(selected:number){
+export default function NavBar({selected}:{selected:number}){
     for(let i = 0; i < navBarLinks.length; i++){
         navBarLinks[i].current = selected === i;
     }
@@ -34,5 +34,5 @@ export function NavBarLinks({ props } : { props:NavBarLinkProp[] }){
 }
 
 function NavBarLink({ current, text, url }: NavBarLinkProp){
-    return <li><Link className={current ? "greenText" : ""} to={url}>{text}</Link></li>;
+    return <li><Link className={current ? "greenText" : "greyText"} to={url}>{text}</Link></li>;
 }

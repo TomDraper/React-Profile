@@ -409,16 +409,13 @@ const pageSectionsProps = [
     }
 ]
 
-const navBar = NavBar(1);
-const footer = Footer(true, true);
-
 export default function ProjectsPage(){
     return (
         <div>
-            { navBar }
+            <NavBar selected={1} />
             <PageIntro props={pageIntroProps} />
             <BoxSection props={pageSectionsProps} />
-            { footer }
+            <Footer includeProjectButton={false} includeContactButton={true} />
         </div>
     );
 }
