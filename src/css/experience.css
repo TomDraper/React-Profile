@@ -1,0 +1,27 @@
+.experienceContainer {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.experienceContainer > .greenText {
+    margin-bottom: 2rem;
+    margin-left: 0;
+}
+
+.experienceBlock {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-left: 5px var(--green-text) solid;
+    padding-left: 2rem;
+}
+
+.seperator {
+    width: 100%;
+    height: var(--gap-l);
+    border-bottom: 1px var(--border-grey) solid;
+    margin-bottom: var(--gap-l);
+}
+
+.experienceBlock > .description {
+    color: var(--white-text);
+}
