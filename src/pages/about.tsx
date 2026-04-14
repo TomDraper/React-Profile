@@ -18,7 +18,6 @@ const pageIntroProps : PageIntroProps =
     ]
 }
 
-
 const bulletCards : SmallCardBulletProp[] = [
     { 
         icon: defaultImage, 

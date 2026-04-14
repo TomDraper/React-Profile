@@ -1,32 +1,18 @@
 import NavBar from '../components/navbar.tsx';
 import Footer from '../components/footer.tsx';
-import {PageIntroProps, PageIntro } from '../components/pageIntro.tsx';
+import { PageIntroProps, PageIntro } from '../components/pageIntro.tsx';
+import { Carousel, CarouselItemProp } from '../components/carousel.tsx';
+import { BasicParagraphSection } from '../components/textHelpers.tsx';
 
 import '../css/projects.css';
 
 import defaultImage from '../images/lights.jpg';
 
-export type ProjectsSectionProp = {
+type ProjectsPageProp = {
     title: string,
     introParagraphs: string[],
     anchorName: string,
-    carouselProps: ProjectsCarouselProp[]
-}
-
-export type ProjectsCarouselProp = {
-    image: string,
-    title: string,
-    bannerTitle?: string,
-    bannerText?: string,
-    paragraphs: string[],
-    linkLines?: LinkLine[],
-    tags: string[]
-}
-
-export type LinkLine = {
-    link: string,
-    linkText: string,
-    text: string
+    carouselProps: CarouselItemProp[]
 }
 
 const pageIntroProps : PageIntroProps = 
@@ -193,13 +179,17 @@ const pageSectionsProps = [
             {
                 image: defaultImage,
                 title: "p5 General",
-                bannerTitle: "Any code here is built as a solo project!",
-                bannerText: "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!",
+                banner: {
+                    bannerTitle: "Any code here is built as a solo project!",
+                    bannerText: [
+                        "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!"
+                    ]
+                },
                 paragraphs: [
                     "P5 is something I've used for years. I appreciate that it's online, easily accessible, and rudimentary in what it is trying to achieve. Essentially a small graphics library for the web. It helps that The Coding Train youtube channel has a lot of tutorials which is what originally got me into using p5 and since then it has just been my go-to for quick things I want to check out.",
                     "My entire library of sketches that I have written can be found HERE but I have listed some of the more interesting or impressive ones below - There is a lot and a lot of them may be blank, boring or just not work."
                 ],
-                linkLines: [
+                linkListProps: [
                     {
                         link: "https://editor.p5js.org/Pseu/sketches/yIpPKbQ1R",
                         linkText: "Fireworks",
@@ -230,12 +220,16 @@ const pageSectionsProps = [
             {
                 image: defaultImage,
                 title: "p5 Genetic Algorithms",
-                bannerTitle: "Any code here is built as a solo project!",
-                bannerText: "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!",
+                banner: {
+                    bannerTitle: "Any code here is built as a solo project!",
+                    bannerText: [
+                        "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!"
+                    ]
+                },
                 paragraphs: [
                     "At some point I became really obsessed with genetic algorithms and wrote a few of my own to solve some simple problems. I also created a perceptron which is the basis of the neural networks that we see so much news about today."
                 ],
-                linkLines: [
+                linkListProps: [
                     {
                         link: "https://editor.p5js.org/Pseu/sketches/-_TQR2aEh",
                         linkText: "Genetic Gravity",
@@ -263,12 +257,16 @@ const pageSectionsProps = [
             {
                 image: defaultImage,
                 title: "p5 Shaders",
-                bannerTitle: "Any code here is built as a solo project!",
-                bannerText: "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!",
+                banner: {
+                    bannerTitle: "Any code here is built as a solo project!",
+                    bannerText: [
+                        "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!"
+                    ]
+                },
                 paragraphs: [
                     "p5 includes ways to run shaders and as something I was interested in, I have a few that I have wrote. I have found that working with shaders inside of Unreal/Unity to be far easier than writing the raw code, but I like knowing what that code is as well. Nowadays I am more likely to use ShaderToy if I am looking to do something quick."
                 ],
-                linkLines: [
+                linkListProps: [
                     {
                         link: "https://editor.p5js.org/Pseu/sketches/kOCJm5y7o",
                         linkText: "Boids Shader",
@@ -305,12 +303,16 @@ const pageSectionsProps = [
             {
                 image: defaultImage,
                 title: "p5 Physics and Math",
-                bannerTitle: "Any code here is built as a solo project!",
-                bannerText: "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!",
+                banner: {
+                    bannerTitle: "Any code here is built as a solo project!",
+                    bannerText: [
+                        "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!"
+                    ]
+                },
                 paragraphs: [
                     "Anything that contains some element of physics or math at it's core idea."
                 ],
-                linkLines: [
+                linkListProps: [
                     {
                         link: "https://editor.p5js.org/Pseu/sketches/8wvoDsUvn",
                         linkText: "Serpinski Triangle",
@@ -365,12 +367,16 @@ const pageSectionsProps = [
             {
                 image: defaultImage,
                 title: "p5 Algorithms",
-                bannerTitle: "Any code here is built as a solo project!",
-                bannerText: "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!",
+                banner: {
+                    bannerTitle: "Any code here is built as a solo project!",
+                    bannerText: [
+                        "It may therefore be uncommented and/or difficult to read. This isn't how I would write production-level code!"
+                    ]
+                },
                 paragraphs: [
                     "Things that are running an algorithm of some description (Even if that algorithm is physics based or non-deterministic) and don't fit into the other categories neatly."
                 ],
-                linkLines: [
+                linkListProps: [
                     {
                         link: "https://editor.p5js.org/Pseu/sketches/WFd2m0Ue3T",
                         linkText: "Shouting Insects",
@@ -420,7 +426,7 @@ export default function ProjectsPage(){
     );
 }
 
-function BoxSection({props}:{props:ProjectsSectionProp[]}){
+function BoxSection({props}:{props:ProjectsPageProp[]}){
     return (
         <div className="largeBoxSection">
             <Sections props={props} />
@@ -428,86 +434,18 @@ function BoxSection({props}:{props:ProjectsSectionProp[]}){
     );
 }
 
-function Sections({props}:{props:ProjectsSectionProp[]}){
+function Sections({props}:{props:ProjectsPageProp[]}){
     return props.map((prop, index)=>
         <Section key={index} prop={prop} />
     );
 }
 
-function Section({prop}:{prop:ProjectsSectionProp}) {
-    var sectionClassNames = `largeBoxCarousel ${prop.anchorName} fadeWhenInView`
+function Section({prop}:{prop:ProjectsPageProp}) {
     return (
         <div className="projectsSection">
             <h1 className="greenText">{prop.title}</h1>
-            <SectionParagraph paragraphs={prop.introParagraphs} />
-            <div className={sectionClassNames}>
-                <CarouselItems props={prop.carouselProps} />
-            </div>
+            <BasicParagraphSection paragraphs={prop.introParagraphs} />
+            <Carousel anchorName={prop.anchorName} props={prop.carouselProps} />
         </div>
     );
-}
-
-function SectionParagraph({paragraphs}:{paragraphs:string[]}){
-    return paragraphs.map((line, index)=>
-        <p key={index}>{line}</p>
-    );
-}
-
-function CarouselItems({props}:{props:ProjectsCarouselProp[]}){
-    return props.map((prop, index)=>
-        <CarouselItem key={index} prop={prop} />
-    );
-}
-
-function CarouselItem({prop}:{prop:ProjectsCarouselProp}){
-    return (
-        <div className="largeBoxScroll">
-            <div className="largeBoxScrollImageColumn">
-                <img src={prop.image}/>
-            </div>
-            <div className="largeBoxScrollContentColumn">
-                <h3>{prop.title}</h3>
-                <div className="largeBoxScrollContent">
-                    <Banner prop={prop} />
-                    <SectionParagraph paragraphs={prop.paragraphs} />
-                    <LinkLines prop={prop} />
-                </div>
-                <div className="tagBox">
-                    <SectionParagraph paragraphs={prop.tags} />
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function Banner({prop}:{prop:ProjectsCarouselProp}){
-    if (prop.bannerTitle == null && prop.bannerText == null) return "";
-
-    let bannerTitle = prop.bannerTitle ? <h3><b>{prop.bannerTitle}</b></h3> : "";
-    let bannerText = prop.bannerText ? <p>{prop.bannerText}</p> : ""
-
-    return (
-        <div className="largeBoxScrollBanner">
-            {bannerTitle}
-            {bannerText}
-        </div>
-    );
-}
-
-function LinkLines({prop}:{prop:ProjectsCarouselProp}){
-    if (prop.linkLines == null) return "";
-
-    var links = prop.linkLines.map((prop, index)=>
-        <LinkLine key={index} prop={prop} />
-    )
-
-    return (
-        <p>
-            {links}
-        </p>
-    );
-}
-
-function LinkLine({prop}:{prop:LinkLine}){
-    return <div><a href={prop.link}>{prop.linkText}</a> - {prop.text}<br /></div>
 }

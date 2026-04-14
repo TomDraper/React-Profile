@@ -1,5 +1,3 @@
-
-
 export type SmallCardProp = {
     icon?: string,
     title?: string,

@@ -110,3 +110,26 @@
     content: "";
     margin-left: -0.5rem;
 }
+
+@media (max-width: 640px) {
+    .boxSection {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .boxIconBackground {
+        align-self: center;
+    }
+
+    .smallBoxGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
+
+    .smallBox {
+        width: fit-content;
+        min-width: min(var(--small-box-width), 100%);
+        justify-self: center;
+        justify-items: center;
+    }
+}

@@ -1,4 +1,3 @@
-
 .navBar {
     position: sticky;
     height: 60px;
@@ -58,4 +57,12 @@
 .navBar > ul > li {
     margin-right: 1rem;
     margin-left: 1rem;
+}
+
+
+@media (max-width: 640px) {
+    .navBar > ul {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

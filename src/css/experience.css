@@ -25,3 +25,15 @@
 .experienceBlock > .description {
     color: var(--white-text);
 }
+
+@media (max-width: 640px) {
+    .experienceContainer {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .experienceBlock {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 1rem;
+    }
+}
