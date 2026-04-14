@@ -4,6 +4,11 @@ import Footer from '../components/footer.tsx';
 import '../css/pageIntro.css';
 import '../css/contact.css';
 
+import emailIcon from '../images/icons/Profile.png';
+import socialIcon from '../images/icons/Mail.png';
+import githubIcon from '../images/icons/Code.png';
+import linkedInIcon from '../images/icons/Briefcase.png';
+
 export type EmailProp = {
     icon: string,
     email: string,
@@ -19,7 +24,7 @@ export type SocialProp = {
 
 const emailProp : EmailProp =
 { 
-    icon: "blank",
+    icon: emailIcon,
     email: "mythirdalias@gmail.com",
     emailSubject: "Hello, I saw your site!",
     emailIntro: "Hello!%0D%0A%0D%0ASaw your site and would like to talk to you about..."
@@ -27,12 +32,12 @@ const emailProp : EmailProp =
 
 const socialProps : SocialProp[] = [
     {
-        icon: "blank",
+        icon: githubIcon,
         link: "https://github.com/TomDraper",
         text: "GitHub"
     },
     {
-        icon: "blank",
+        icon: linkedInIcon,
         link: "https://www.linkedin.com/in/tom-draper-88836321a",
         text: "LinkedIn"
     }
@@ -85,7 +90,7 @@ function SocialBox({props}:{props:SocialProp[]}){
     return (
         <div className="socials">
             <div className="socialsTitleContainer">
-                <img className="emailIcon" src="images/icons/Profile.png" />
+                <img className="emailIcon" src={socialIcon} />
                 <h3 className="greenText">Socials</h3>
             </div>
             <SocialBoxLinks props={props} />
@@ -113,7 +118,7 @@ function ContactForm(){
         <div className="contactForm">
             <h3>Send a Message</h3>
             <p>Will send from your default email app! Not setting up a backend for a simple profile.</p>
-            <form id="contactForm">
+            <form action={SubmitContactForm} id="contactForm">
                 <label>Name <input id="name" name="name" type="text"></input></label><br />
                 <label>Subject <input id="subject" name="subject" type="text"></input></label><br />
                 <div className="contactMessage"><textarea id="message" name="message" placeholder="Message..."></textarea></div><br />
@@ -121,4 +126,19 @@ function ContactForm(){
             </form>
         </div>
     );
+}
+
+function SubmitContactForm(formData:FormData){
+    console.log("Form Submitted");
+    console.log(JSON.stringify(formData));
+    console.log(formData);
+    
+    var entries = Object.fromEntries(formData);
+    
+    var name = entries.name;
+    var subject = encodeURIComponent(`${entries.subject}`);
+    var body = entries.message;
+    var message = encodeURIComponent(`Hi Tom, it's ${name}.\r\nI've seen your profile and I'd like to get in touch:\r\n${body}`);
+    console.log(`mailto:mythirdalias@gmail.com?subject=${subject}&body=${message}`)
+    window.location.href = `mailto:mythirdalias@gmail.com?subject=${subject}&body=${message}`;
 }

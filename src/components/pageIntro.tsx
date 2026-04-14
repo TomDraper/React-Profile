@@ -1,3 +1,5 @@
+import { useFadeInView } from '../hooks/fadeInView.ts'
+
 // Images
 import '../css/pageIntro.css';
 
@@ -8,8 +10,10 @@ export type PageIntroProps = {
 }
 
 export function PageIntro({props}:{props:PageIntroProps}) {
+    const { ref, className } = useFadeInView("pageIntro");
+
     return (
-        <div className="pageIntro fadeWhenInView">
+        <div ref={ref} className={className}>
             <h1 className="greenText">{props.title}</h1>
             {props.sideImage ?
                 <img className="pageIntroSideImage" src={props.sideImage}></img> :

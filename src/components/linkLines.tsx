@@ -13,9 +13,9 @@ export function LinkList({props}:{props?:LinkListProp[]}){
     )
 
     return (
-        <p>
+        <div>
             {links}
-        </p>
+        </div>
     );
 }
 

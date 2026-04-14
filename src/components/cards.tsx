@@ -1,3 +1,5 @@
+import { useFadeInView } from "../hooks/fadeInView.ts";
+
 export type SmallCardProp = {
     icon?: string,
     title?: string,
@@ -12,7 +14,7 @@ export type SmallCardBulletProp = {
 
 export function SmallCardFlexBox({ cardProps } : { cardProps:SmallCardProp[] }){
     return (
-        <div className="boxSection fadeWhenInView">
+        <div className="boxSection">
             <div className="boxGrid">
                 <SmallCardBox cardProps={cardProps} />
             </div>
@@ -27,8 +29,10 @@ export function SmallCardBox({ cardProps } : { cardProps:SmallCardProp[] }){
 }
 
 export function SmallCard({ icon, title, innerText }: SmallCardProp){
+
+    const { ref, className } = useFadeInView("box");
     return (
-        <div className="box">
+        <div ref={ref} className={className}>
             <div className="boxIconBackground"><img className="boxIcon" src={ icon } /></div>
             <h3>{ title }</h3>
             <p>{ innerText }</p>
@@ -55,8 +59,10 @@ function SmallCardBulletedBox({ cardProps } : { cardProps: SmallCardBulletProp[]
 
 export function SmallCardBulleted({ icon, title, bulletPoints }:SmallCardBulletProp)
 {
+    const { ref, className } = useFadeInView("smallBox");
+
     return (
-        <div className="smallBox fadeWhenInView">
+        <div ref={ref} className={className}>
             <div className="boxIconBackground"><img className="boxIcon" src={icon} /></div>
             <h3>{title}</h3>
             <ul>

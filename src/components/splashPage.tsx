@@ -1,6 +1,10 @@
+import { useFadeInView } from '../hooks/fadeInView.ts'
+
 export default function SplashPage(){
+    const { ref, className } = useFadeInView("splashPage center");
+
     return (
-        <div className="splashPage center fadeWhenInView">
+        <div ref={ref}className={className}>
             <div className="splashPageVignette center">
                 <h2>Tom Draper</h2>
                 <h1 className="greenText">Games Programmer</h1>

@@ -34,6 +34,10 @@
     height: fit-content;
 }
 
+.box:hover {
+    border: 1px var(--green-text) solid;
+}
+
 .boxIconBackground {
     width: 32px;
     height: 32px;
@@ -75,7 +79,10 @@
     border-radius: var(--button-radius);
     background-color: var(--secondary-background-color);
     padding: var(--gap-m);
-    
+}
+
+.smallBox:hover {
+    border: 1px var(--green-text) solid;
 }
 
 .smallBox > img {

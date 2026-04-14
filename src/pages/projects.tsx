@@ -1,3 +1,4 @@
+import { useFadeInView } from '../hooks/fadeInView.ts'
 import NavBar from '../components/navbar.tsx';
 import Footer from '../components/footer.tsx';
 import { PageIntroProps, PageIntro } from '../components/pageIntro.tsx';
@@ -441,10 +442,14 @@ function Sections({props}:{props:ProjectsPageProp[]}){
 }
 
 function Section({prop}:{prop:ProjectsPageProp}) {
+    const {ref, className} = useFadeInView("")
+
     return (
         <div className="projectsSection">
-            <h1 className="greenText">{prop.title}</h1>
-            <BasicParagraphSection paragraphs={prop.introParagraphs} />
+            <div ref={ref} className={className}>
+                <h1 className="greenText">{prop.title}</h1>
+                <BasicParagraphSection paragraphs={prop.introParagraphs} />
+            </div>
             <Carousel anchorName={prop.anchorName} props={prop.carouselProps} />
         </div>
     );

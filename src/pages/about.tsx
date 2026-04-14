@@ -5,6 +5,12 @@ import { ExperienceProp, ExperienceSection } from '../components/experience.tsx'
 import Footer from '../components/footer.tsx';
 
 import defaultImage from '../images/lights.jpg';
+import controllerIcon from '../images/icons/Controller.png'
+import codeIcon from '../images/icons/Code.png'
+import cogIcon from '../images/icons/Cog.png'
+import documentIcon from '../images/icons/Document.png'
+import boltIcon from '../images/icons/Bolt.png'
+import vrControllerIcon from '../images/icons/VRController.png'
 
 const pageIntroProps : PageIntroProps = 
 {
@@ -20,7 +26,7 @@ const pageIntroProps : PageIntroProps =
 
 const bulletCards : SmallCardBulletProp[] = [
     { 
-        icon: defaultImage, 
+        icon: controllerIcon, 
         title: "Game Engines", 
         bulletPoints: [
             "Unity Editor (C#)",
@@ -29,7 +35,7 @@ const bulletCards : SmallCardBulletProp[] = [
         ]
     },
     { 
-        icon: defaultImage, 
+        icon: codeIcon, 
         title: "Languages", 
         bulletPoints: [
             "C# / C++ / Python",
@@ -38,7 +44,7 @@ const bulletCards : SmallCardBulletProp[] = [
         ]
     },
     { 
-        icon: defaultImage, 
+        icon: cogIcon, 
         title: "Source Control", 
         bulletPoints: [
             "Plastic SCM",
@@ -47,7 +53,7 @@ const bulletCards : SmallCardBulletProp[] = [
         ]
     },
     { 
-        icon: defaultImage, 
+        icon: documentIcon, 
         title: "IDEs", 
         bulletPoints: [
             "Visual Studio",
@@ -56,7 +62,7 @@ const bulletCards : SmallCardBulletProp[] = [
         ]
     },
     { 
-        icon: defaultImage, 
+        icon: boltIcon, 
         title: "APIs / Extensions", 
         bulletPoints: [
             "Photon / ObiRope",
@@ -65,7 +71,7 @@ const bulletCards : SmallCardBulletProp[] = [
         ]
     },
     { 
-        icon: defaultImage, 
+        icon: vrControllerIcon, 
         title: "Built Games For", 
         bulletPoints: [
             "PC / Mac Computers",

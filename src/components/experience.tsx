@@ -1,3 +1,5 @@
+import { useFadeInView } from '../hooks/fadeInView';
+
 import '../css/experience.css'
 
 export type ExperienceProp = {
@@ -21,20 +23,19 @@ export function ExperienceSection({title, props}:{title:string, props:Experience
 
 function ExperinceBlockSection({props}:{props:ExperienceProp[]}){
     return props.map((prop, index) =>
-        <div>
-            <ExperienceBlock key={index} prop={prop} />
-            <div className="seperator"></div>
-        </div>
+        <ExperienceBlock key={index} prop={prop} />
     );
 }
 
 function ExperienceBlock({prop}:{prop:ExperienceProp}) {
+    const {ref, className} = useFadeInView("experienceBlock")
     return (
-        <div className="experienceBlock fadeWhenInView">
+        <div ref={ref} className={className}>
             <p className="greenText">{prop.fromMonth} {prop.fromYear} - {prop.toMonth} {prop.toYear}</p>
             <h4>{prop.jobTitle}</h4>
             <p>{prop.companyName}</p>
             <ExperienceLines paragraphs={prop.paragraphs} />
+            <div className="seperator"></div>
         </div>
     );
 }

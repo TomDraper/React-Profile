@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, HashRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import './css/vars.css';
+import './css/animations.css';
 
 import HomePage from "./pages/home.tsx";
 import AboutPage from "./pages/about.tsx";

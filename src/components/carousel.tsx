@@ -1,3 +1,4 @@
+import { useFadeInView } from '../hooks/fadeInView.ts'
 import { LinkListProp, LinkList } from './linkLines.tsx'
 import { TagBox, BasicParagraphSection } from './textHelpers.tsx'
 import { BannerProp, Banner } from './banner.tsx';
@@ -15,9 +16,10 @@ export type CarouselItemProp = {
 
 export function Carousel({anchorName, props}:{anchorName:string, props:CarouselItemProp[]}){
     var sectionClassNames = `largeBoxCarousel ${anchorName} fadeWhenInView`
+    const { ref, className } = useFadeInView(sectionClassNames);
     
     return (
-        <div className={sectionClassNames}>
+        <div ref={ref} className={className}>
             <CarouselItems props={props} />
         </div>
     );
