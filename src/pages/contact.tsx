@@ -78,7 +78,7 @@ function EmailBox({prop}:{prop:EmailProp}){
     return (
         <div className="emailBox">
             <div className="socialsTitleContainer">
-                <a className="whiteLink" href={mailLink}><img className="emailIcon" src={prop.icon} /></a>
+                <a className="whiteLink" href={mailLink}><img className="emailIcon" src={prop.icon} alt="Icon for Email"/></a>
                 <h3 className="greenText">Email</h3>
             </div>
             <a className="whiteLink" href={mailLink}>{prop.email}</a>
@@ -90,7 +90,7 @@ function SocialBox({props}:{props:SocialProp[]}){
     return (
         <div className="socials">
             <div className="socialsTitleContainer">
-                <img className="emailIcon" src={socialIcon} />
+                <img className="emailIcon" src={socialIcon} alt="Icon for Socials" />
                 <h3 className="greenText">Socials</h3>
             </div>
             <SocialBoxLinks props={props} />
@@ -107,7 +107,7 @@ function SocialBoxLinks({props} : {props:SocialProp[]} ){
 function SocialLink({prop}:{prop:SocialProp}){
     return (
         <div className="socialLink">
-            <a href={prop.link}><img className="socialIcon" src={prop.icon} /></a>
+            <a href={prop.link}><img className="socialIcon" src={prop.icon} alt="Icon"/></a>
             <a href={prop.link} className="whiteLink">{prop.text}</a>
         </div>
     );

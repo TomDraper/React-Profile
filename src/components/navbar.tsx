@@ -20,7 +20,7 @@ export default function NavBar({selected}:{selected:number}){
     return (
         <div className="navBar">
             <ul>
-                <li><a className="greenText">Tom Draper</a></li>
+                <li><p className="greenText title">Tom Draper</p></li>
                 <NavBarLinks props={navBarLinks} />
             </ul>
         </div>

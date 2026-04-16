@@ -18,6 +18,13 @@
     color: var(--grey-text);
 }
 
+.title {
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    height: 100%;
+    align-content: center;
+}
+
 .navBar > ul > li > a, 
 .navBar > ul > li > a:visited, 
 .navBar > ul > li > a:active

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, HashRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './css/vars.css';
 import './css/animations.css';

@@ -33,7 +33,7 @@ export function SmallCard({ icon, title, innerText }: SmallCardProp){
     const { ref, className } = useFadeInView("box");
     return (
         <div ref={ref} className={className}>
-            <div className="boxIconBackground"><img className="boxIcon" src={ icon } /></div>
+            <div className="boxIconBackground"><img className="boxIcon" src={ icon } alt=""/></div>
             <h3>{ title }</h3>
             <p>{ innerText }</p>
         </div>
@@ -63,7 +63,7 @@ export function SmallCardBulleted({ icon, title, bulletPoints }:SmallCardBulletP
 
     return (
         <div ref={ref} className={className}>
-            <div className="boxIconBackground"><img className="boxIcon" src={icon} /></div>
+            <div className="boxIconBackground"><img className="boxIcon" src={icon} alt=""/></div>
             <h3>{title}</h3>
             <ul>
                 <BulletPoints bulletPoints={bulletPoints} />

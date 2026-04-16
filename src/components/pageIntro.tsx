@@ -16,7 +16,7 @@ export function PageIntro({props}:{props:PageIntroProps}) {
         <div ref={ref} className={className}>
             <h1 className="greenText">{props.title}</h1>
             {props.sideImage ?
-                <img className="pageIntroSideImage" src={props.sideImage}></img> :
+                <img className="pageIntroSideImage" src={props.sideImage} alt="Decorative accompanying Text"></img> :
                 ""}
             <div className="paragraphBlock">
                 <IntroParagraphs lines={props.paragraphs} />

@@ -5,7 +5,9 @@ export type LinkListProp = {
 }
 
 export function LinkList({props}:{props?:LinkListProp[]}){
-    if (props == null || props.length == 0)
+    if (props == null) 
+        return;
+    if (props.length === 0) 
         return;
 
     var links = props.map((prop, index)=>

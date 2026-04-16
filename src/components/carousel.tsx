@@ -35,7 +35,7 @@ function CarouselItem({prop}:{prop:CarouselItemProp}){
     return (
         <div className="largeBoxScroll">
             <div className="largeBoxScrollImageColumn">
-                <img src={prop.image}/>
+                <img src={prop.image} alt=""/>
             </div>
             <div className="largeBoxScrollContentColumn">
                 <h3>{prop.title}</h3>
