@@ -11,8 +11,8 @@
     grid-template-areas:    "emailBox socials"
                             "contact contact";
     gap: 1em;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: var(--page-margin);
+    margin-right: var(--page-margin);
 }
 
 .emailIcon {
@@ -154,18 +154,12 @@
 }
 
 @media (max-width: 768px) {
-    
-}
-
-@media (max-width: 640px) {
     .contactGrid {
         display: flex;
         flex-direction: column;
         width: auto;
         justify-self: center;
         gap: 1rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
     }
 
     .contactForm > form > label > #text {

@@ -1,7 +1,7 @@
 .pageIntro {
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-top: 4rem;
+    margin-left: var(--page-margin);
+    margin-right: var(--page-margin);
+    margin-top: var(--page-margin);
     overflow: hidden;
 }
 
@@ -24,22 +24,10 @@
     margin: 0;
 }
 
-@media (max-width: 640px) {
-    .pageIntro {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        margin-top: 1rem;
-        overflow: hidden;
-    }
-
+@media (max-width: 768px) {
     .pageIntroSideImage {
-        float: right;
-        margin-left: 1rem;
-        display: flex;
         justify-self: center;
         width: 100%;
-        aspect-ratio: auto 16/9;
         margin-bottom: 1rem;
-        border-radius: var(--button-radius);
     }
 }

@@ -1,6 +1,6 @@
 .experienceContainer {
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: var(--page-margin);
+    margin-right: var(--page-margin);
 }
 
 .experienceContainer > .greenText {
@@ -26,11 +26,7 @@
     color: var(--white-text);
 }
 
-@media (max-width: 640px) {
-    .experienceContainer {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+@media (max-width: 768px) {
     .experienceBlock {
         margin-left: 0;
         margin-right: 0;

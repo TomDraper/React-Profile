@@ -3,8 +3,8 @@
     flex-direction: column;
     margin-top: 1rem;
     padding-bottom: 1rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: var(--page-margin);
+    margin-right: var(--page-margin);
 }
 
 .boxSection > h1 {
@@ -118,12 +118,7 @@
     margin-left: -0.5rem;
 }
 
-@media (max-width: 640px) {
-    .boxSection {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    
+@media (max-width: 768px) {    
     .boxIconBackground {
         align-self: center;
     }

@@ -60,7 +60,7 @@
 }
 
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .navBar > ul {
         padding-left: 0;
         padding-right: 0;

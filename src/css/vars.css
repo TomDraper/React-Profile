@@ -44,8 +44,22 @@
     --gap-l: 18px;
     --gap-xl: 24px;
 
+    --page-margin: 4rem;
+
     /* Boxes */
     --box-width: 410px;
     --box-height: 215px;
     --small-box-width: 300px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --page-margin: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --page-margin: 1rem;
+    }
 }
