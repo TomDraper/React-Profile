@@ -1,26 +1,25 @@
 import { useFadeInView } from '../hooks/fadeInView.ts'
 import { LinkListProp, LinkList } from './linkLines.tsx'
-import { TagBox, BasicParagraphSection } from './textHelpers.tsx'
+import { BasicParagraphSection } from './textHelpers.tsx'
 import { BannerProp, Banner } from './banner.tsx';
-
+import { TagBox, Taggable, FilterByTags } from '../components/tagFilter.tsx';
 import '../css/carousel.css';
 
-export type CarouselItemProp = {
+export type CarouselItemProp = Taggable & {
     image: string,
     title: string,
     banner?: BannerProp,
     paragraphs: string[],
-    linkListProps?: LinkListProp[],
-    tags: string[]
+    linkListProps?: LinkListProp[]
 }
 
-export function Carousel({anchorName, props}:{anchorName:string, props:CarouselItemProp[]}){
+export function Carousel({anchorName, props, filter}:{anchorName:string, props:CarouselItemProp[], filter: Set<string>}){
     var sectionClassNames = `largeBoxCarousel ${anchorName} fadeWhenInView`
     const { ref, className } = useFadeInView(sectionClassNames);
-    
+    const filteredProps = FilterByTags(props, filter);
     return (
         <div ref={ref} className={className}>
-            <CarouselItems props={props} />
+            <CarouselItems props={filteredProps} />
         </div>
     );
 }
@@ -44,7 +43,7 @@ function CarouselItem({prop}:{prop:CarouselItemProp}){
                     <BasicParagraphSection paragraphs={prop.paragraphs} />
                     <LinkList props={prop.linkListProps} />
                 </div>
-                <TagBox prop={prop.tags} />
+                <TagBox prop={prop} />
             </div>
         </div>
     );

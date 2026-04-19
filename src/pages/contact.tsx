@@ -128,17 +128,11 @@ function ContactForm(){
     );
 }
 
-function SubmitContactForm(formData:FormData){
-    console.log("Form Submitted");
-    console.log(JSON.stringify(formData));
-    console.log(formData);
-    
+function SubmitContactForm(formData:FormData){    
     var entries = Object.fromEntries(formData);
-    
     var name = entries.name;
     var subject = encodeURIComponent(`${entries.subject}`);
     var body = entries.message;
     var message = encodeURIComponent(`Hi Tom, it's ${name}.\r\nI've seen your profile and I'd like to get in touch:\r\n${body}`);
-    console.log(`mailto:mythirdalias@gmail.com?subject=${subject}&body=${message}`)
     window.location.href = `mailto:mythirdalias@gmail.com?subject=${subject}&body=${message}`;
 }

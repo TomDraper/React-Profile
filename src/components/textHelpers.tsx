@@ -7,11 +7,3 @@ export function BasicParagraphSection({paragraphs}:{paragraphs:string[]}){
         <p key={index}>{line}</p>
     );
 }
-
-export function TagBox({prop}:{prop:string[]}){
-    return (
-        <div className="tagBox">
-            <BasicParagraphSection paragraphs={prop} />
-        </div>
-    );
-}

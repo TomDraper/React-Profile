@@ -4,6 +4,8 @@ import Footer from '../components/footer.tsx';
 import { PageIntroProps, PageIntro } from '../components/pageIntro.tsx';
 import { Carousel, CarouselItemProp } from '../components/carousel.tsx';
 import { BasicParagraphSection } from '../components/textHelpers.tsx';
+import { useState, useEffect } from 'react'
+import { TagFilter, Taggable } from '../components/tagFilter.tsx';
 
 import '../css/projects.css';
 
@@ -41,14 +43,14 @@ const pageSectionsProps = [
                     "Created tooling to automatically translate any projects we made using Google Translate API. It would then also create voiced lines using Google Text-To-Speech API and put the output text or audio where it needed to be to work in game.",
                     "Supported SSML and had a number of custom 'tags' that developers could use to change how words were pronounced, silence sections, say things not directly in the text etc."
                 ],
-                tags: [
+                tags: new Set([
                     "Luminous",
                     "Unity Editor",
                     "Localization",
                     "Google API",
                     "TTS",
                     "Automated"
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -57,12 +59,12 @@ const pageSectionsProps = [
                     "Worked on the Luminous 'Flow' system which was a (mostly) internal tool we used to quickly develop VR and XR scenarios using a graph system similar to that of Blueprints in Unreal Engine.",
                     "I maintained, updated and created a number of additional nodes that people could use as well as did an optimization pass to add and improve support for copy/paste, undo/redo, grouping and multiple pathing."
                 ],
-                tags: [
+                tags: new Set([
                     "Luminous",
                     "Graph System",
                     "Editor Tooling",
                     "Speed Development"
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -73,12 +75,12 @@ const pageSectionsProps = [
                     "A number of different question templates were created including fill-in-the-blank, identify places on an image and rearrange images into the correct order.",
                     "The main challenge of the game was handling, updating and maintaining the different types of questions that we needed as well as keeping the game performant/low disk space as it needed to be accessed online by people potentially running low-end hardware."
                 ],
-                tags: [
+                tags: new Set([
                     "Luminous",
                     "Adnoc",
                     "WebGL",
                     "Data Structures" 
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -88,12 +90,12 @@ const pageSectionsProps = [
                     "This involved working within the \"Flow System\" - described in a previous section - as well as occasionally writing custom functionality for things outside of it's scope.",
                     "While I did work on and complete a number of modules myself, more often I was tasked with tooling and enabling other developers to work faster, or automate as much of the process as I could, bringing the average turn around of a module (Blank slate -> Viable Product) from a few months to a few days."
                 ],
-                tags: [
+                tags: new Set([
                     "Luminous",
                     "VR",
                     "XR",
                     "Training Modules"
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -103,13 +105,13 @@ const pageSectionsProps = [
                     "The main challenges for this was working with several cameras at any time - There were 4 CCTV like views which would be displayed across 4 monitors to the trainees. As well as this, just about every scenario they wanted involved some sort of particle effect, which would then be displayed to four cameras. So performance became critical. Luckily they were working with a very powerful computer, but it still needed to be reigned in a number of times.",
                     "In addition to this I created a procedural sea with waves which items could float on top of and tried to create a semi-realistic effect for the boats on it. It also included some shader work to create a transparent effect, lerp towards a 'shallow' colour where the sea intersected objects and include spray and foam."
                 ],
-                tags: [
+                tags: new Set([
                     "Luminous",
                     "Desktop",
                     "Training",
                     "Simulation",
                     "Shader"
-                ]
+                ])
             }
         ]
     },
@@ -126,7 +128,7 @@ const pageSectionsProps = [
                 paragraphs: [
                     "I began as a junior in Sprung, where I was creating prototypes of UIs for approval by more senior members and to transfer the skills I had in Unity over to Unreal. I actually got bumped up to a developer long before my time as a junior was due to end as I already understood the fundamentals and quickly adapted to the tools."
                 ],
-                tags: [
+                tags: new Set([
                     "Sprung Studios",
                     "Unreal Engine",
                     "Localization",
@@ -134,7 +136,7 @@ const pageSectionsProps = [
                     "UX",
                     "Game Development",
                     "Perforce"
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -144,14 +146,14 @@ const pageSectionsProps = [
                     "Built in Unreal Engine it was my task to take what the designers had made, fill it with the information actually available in the game and then display it in a performant manner. The standard at Sprung are incredibly high and therefore anything that wasn't pixel-perfect, reactive to multiple resolutions, optimized and built to adapt for any future changes wouldn't pass the reviews. The work I produced there was of an exceptional quality.",
                     "Sadly I believe the project got scrapped after my leaving (Probably unrelated) but it was extremely interesting and taught me a lot about how large and complex games are made. It also introduced me to Unreal Engines UI system, Perforce and Unit Testing." 
                 ],
-                tags: [
+                tags: new Set([
                     "Sprung Studios",
                     "Unreal Engine",
                     "UI",
                     "UX",
                     "Game Development",
                     "Perforce" 
-                ]
+                ])
             }
         ]
     },
@@ -169,13 +171,13 @@ const pageSectionsProps = [
                     "This is the latest itteration of my portfolio. I tend to design from scratch, and not use templates. While I'm not against their use I want to demonstrate that I have the skills to understand and work with things on the most basic of levels so that you can feel safe knowing that should a template or particular aspect of a library not work I will have the knowledge to adapt it or write it fresh.",
                     "Currently this website only uses React and was previously built as a pure HTML/CSS page with minimal JS. My previous portfolio did use react and bootstrap and I've done some work with tailwind but not working on it with the same hours as I would a job I don't think my approach was fantastic - You can see how it was used in the history of the github repo." 
                 ],
-                tags: [
+                tags: new Set([
                     "Web",
                     "HTML",
                     "CSS",
                     "JS",
                     "React" 
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -212,11 +214,11 @@ const pageSectionsProps = [
                         text: "Runs a plinko game repeatedly and shows where each ball lands. Leave it for long enough and a standard distribution will appear."
                     } 
                 ],
-                tags: [
+                tags: new Set([
                     "Web",
                     "Javascript",
                     "P5"
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -247,13 +249,13 @@ const pageSectionsProps = [
                         text: "Uses a genetic algorithm to find a path from the top-left to the bottom-right of the canvas using Up/Down/Left/Right movements. Slider will speed up the simulation. After sim has finished time is paused so you can see the resulting path and where the population ended up."
                     } 
                 ],
-                tags: [
+                tags: new Set([
                     "Web",
                     "Javascript",
                     "P5",
                     "Algorithms",
                     "Genetics"
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -294,12 +296,12 @@ const pageSectionsProps = [
                         text: "Shader that shows a Julia set. Sliders can animate and do various things."
                     } 
                 ],
-                tags: [
+                tags: new Set([
                     "Web",
                     "Javascript",
                     "P5",
                     "Shaders"
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -355,7 +357,7 @@ const pageSectionsProps = [
                         text: "Calculate PI by choosing a random point in the canvas (Square) then seeing if that point is less than a certain distance from the center. The ratio of points inside to outside multiplied by 4 approximates PI."
                     } 
                 ],
-                tags: [
+                tags: new Set([
                     "Web",
                     "Javascript",
                     "P5",
@@ -363,7 +365,7 @@ const pageSectionsProps = [
                     "Maths",
                     "Physics",
                     "Chaos"
-                ]
+                ])
             },
             {
                 image: defaultImage,
@@ -404,44 +406,59 @@ const pageSectionsProps = [
                         text: "Animals run around eating plants that are generated. The population ebbs and flows with the abundance or lack of food."
                     }
                 ],
-                tags: [
+                tags: new Set([
                     "Web",
                     "Javascript",
                     "P5",
                     "Algorithms",
                     "Maths"
-                ]
+                ])
             }
         ]
     }
 ]
 
+const allTags:Set<string> = new Set<string>();
+
+function GetAllTags(){
+    pageSectionsProps.forEach((prop)=>{
+        for(let i = 0; i < prop.carouselProps.length; i++){
+            let item = prop.carouselProps[i];
+            item.tags.forEach((tag)=>allTags.add(tag));
+        }
+    });
+}
+
 export default function ProjectsPage(){
+    GetAllTags();
     return (
         <div>
             <NavBar selected={1} />
             <PageIntro props={pageIntroProps} />
-            <BoxSection props={pageSectionsProps} />
+            
+            <BoxSection props={pageSectionsProps} />           
             <Footer includeProjectButton={false} includeContactButton={true} />
         </div>
     );
 }
 
 function BoxSection({props}:{props:ProjectsPageProp[]}){
+    const [filter, setFilter] = useState<Set<string>>(new Set());
     return (
         <div className="largeBoxSection">
-            <Sections props={props} />
+            <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
+            <Sections props={props} filter={filter}/>
         </div>
     );
 }
 
-function Sections({props}:{props:ProjectsPageProp[]}){
+function Sections({props, filter}:{props:ProjectsPageProp[], filter:Set<string>}){
     return props.map((prop, index)=>
-        <Section key={index} prop={prop} />
+        <Section key={index} prop={prop} filter={filter} />
     );
 }
 
-function Section({prop}:{prop:ProjectsPageProp}) {
+function Section({prop, filter}:{prop:ProjectsPageProp, filter:Set<string>}) {
     const {ref, className} = useFadeInView("")
 
     return (
@@ -450,7 +467,7 @@ function Section({prop}:{prop:ProjectsPageProp}) {
                 <h1 className="greenText">{prop.title}</h1>
                 <BasicParagraphSection paragraphs={prop.introParagraphs} />
             </div>
-            <Carousel anchorName={prop.anchorName} props={prop.carouselProps} />
+            <Carousel anchorName={prop.anchorName} props={prop.carouselProps} filter={filter} />
         </div>
     );
 }
