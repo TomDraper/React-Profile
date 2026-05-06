@@ -10,7 +10,8 @@ var navBarLinks : NavBarLinkProp[] = [
     { current: false, text: "Home", url: "/" },
     { current: false, text: "Projects", url: "/projects" },
     { current: false, text: "About", url: "/about" },
-    { current: false, text: "Contact", url: "/contact" }
+    { current: false, text: "Contact", url: "/contact" },
+    { current: false, text: "Terminal", url: "/terminalGame"}
 ]
 
 export default function NavBar({selected}:{selected:number}){
