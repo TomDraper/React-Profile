@@ -111,6 +111,7 @@ button {
 .horizontalContainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--gap-m);
 }
 
