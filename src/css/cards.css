@@ -118,6 +118,15 @@
     margin-left: -0.5rem;
 }
 
+.smallImageCard {
+    width: min(256px, 100%);
+}
+
+.smallImageCardImage {
+    width: min(256px, 100%);
+    height: auto;
+}
+
 @media (max-width: 768px) {    
     .boxIconBackground {
         align-self: center;

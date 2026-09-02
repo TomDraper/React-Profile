@@ -9,12 +9,14 @@ import AboutPage from "./pages/about.tsx";
 import ContactPage from "./pages/contact.tsx";
 import ProjectsPage from "./pages/projects.tsx";
 import TerminalPage from "./pages/terminalGamePage.tsx";
+import WebPage from "./pages/web.tsx";
 
 const homePage = HomePage();
 const projectsPage = ProjectsPage();
 const aboutPage = AboutPage();
 const contactPage = ContactPage();
 const terminalGamePage = TerminalPage();
+const webPage = WebPage();
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Route path="/about" element={aboutPage} />
         <Route path="/contact" element={contactPage} />
         <Route path="/terminalGame" element={terminalGamePage} />
+        <Route path="/web" element={webPage} />
       </Routes>
     </HashRouter>
   );

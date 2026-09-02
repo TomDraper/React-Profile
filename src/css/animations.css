@@ -25,3 +25,13 @@
     animation: fadeOut 2s;
     animation-fill-mode: forwards;
 }
+
+.fade {
+    opacity: 0;
+    transition: opacity 2s;
+    will-change: opacity;
+}
+
+.fade.inView {
+    opacity: 1;
+}

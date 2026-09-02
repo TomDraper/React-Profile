@@ -4,7 +4,7 @@ import TerminalWindow from '../components/terminalWindow';
 export default function TerminalGame(){
     return (
         <div>
-            <NavBar selected={4}/>
+            <NavBar selected={5}/>
             <TerminalWindow />
         </div>
     );

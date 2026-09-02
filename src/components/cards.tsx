@@ -6,6 +6,12 @@ export type SmallCardProp = {
     innerText?: string
 }
 
+export type SmallImageCardProp = {
+    image?: string,
+    title?: string,
+    description?: string
+}
+
 export type SmallCardBulletProp = {
     icon: string,
     title: string,
@@ -36,6 +42,18 @@ export function SmallCard({ icon, title, innerText }: SmallCardProp){
             <div className="boxIconBackground"><img className="boxIcon" src={ icon } alt=""/></div>
             <h3>{ title }</h3>
             <p>{ innerText }</p>
+        </div>
+    );
+}
+
+export function SmallImageCard({ image, title, description }: SmallImageCardProp){
+
+    const { ref, className } = useFadeInView("smallBox");
+    return (
+        <div ref={ref} className={className}>
+            <h3>{ title }</h3>
+            <div className="smallImageCardImage"><img className="boxIcon" src={ image } alt=""/></div>
+            <p>{ description }</p>
         </div>
     );
 }

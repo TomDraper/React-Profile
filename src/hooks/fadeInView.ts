@@ -5,9 +5,11 @@ export function useFadeInView(additionalClassNames:string) {
         root: null,
         rootMargin: "0%",
         threshold: 0.5,
+        initialInView: true
     });
 
-    const className = additionalClassNames + ` ${inView ? "fadeIn" : "fadeOut"}`;
+    console.log(`${ref.name} in view: ${inView}`)
+    const className = additionalClassNames + ` ${inView ? "fade inView" : "fade"}`;
 
     return { ref, className, inView };
 }
